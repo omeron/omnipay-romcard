@@ -1,0 +1,41 @@
+{
+  "name": "bytic/omnipay-romcard",
+  "type": "library",
+  "license": "MIT",
+  "description": "romcard driver for ThePhpLeague Omnipay multi-payment processing library",
+  "keywords": [
+    "librapay",
+    "driver",
+    "gateway",
+    "merchant",
+    "pay",
+    "payment"
+  ],
+  "homepage": "https://github.com/ByTIC/omnipay-romcard",
+  "authors": [
+    {
+      "name": "Gabriel Solomon",
+      "email": "hello@gabrielsolomon.ro"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "ByTIC\\Omnipay\\Romcard\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "ByTIC\\Omnipay\\Romcard\\Tests\\": "tests/src",
+      "ByTIC\\Omnipay\\Romcard\\Tests\\Fixtures\\": "tests/fixtures"
+    }
+  },
+  "require": {
+    "php": "^7.0",
+    "omnipay/common": "^2.3",
+    "bytic/omnipay-common": "^1.0"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^7.3",
+    "vlucas/phpdotenv": "^2.5"
+  }
+}
