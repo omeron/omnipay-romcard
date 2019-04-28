@@ -9,7 +9,6 @@ use ByTIC\Omnipay\Romcard\Message\CompletePurchaseResponse;
 use ByTIC\Omnipay\Romcard\Message\SaleRequest;
 use ByTIC\Omnipay\Romcard\Message\SaleResponse;
 use ByTIC\Omnipay\Romcard\Tests\AbstractTest;
-use Guzzle\Http\Client as HttpClient;
 use Symfony\Component\HttpFoundation\Request as HttpRequest;
 
 /**
@@ -21,7 +20,7 @@ class SaleRequestTest extends AbstractTest
 
     public function testSend()
     {
-        $client = new HttpClient();
+        $client = $this->generateNoSSLClient();
         $request = HttpRequest::createFromGlobals();
         $parameters = require TEST_FIXTURE_PATH . DIRECTORY_SEPARATOR . 'saleParams.php';
         $request->query->replace($parameters);
