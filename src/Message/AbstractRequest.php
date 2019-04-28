@@ -60,4 +60,30 @@ abstract class AbstractRequest extends CommonAbstractRequest
             'key'
         ];
     }
+
+
+    /**
+     *
+     * Generate Nonce
+     * @return string $nonce
+     */
+    public static function generateNonce()
+    {
+        $return = '';
+        for ($i = 0; $i < 32; $i++) {
+            switch (mt_rand(0, 2)) {
+                case 0:
+                    $return .= chr(mt_rand(65, 90));
+                    break;
+                case 1:
+                    $return .= chr(mt_rand(97, 122));
+                    break;
+                case 2:
+                    $return .= chr(mt_rand(48, 57));
+                    break;
+            }
+        }
+
+        return $return;
+    }
 }

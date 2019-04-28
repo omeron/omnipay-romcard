@@ -4,16 +4,18 @@ namespace ByTIC\Omnipay\Romcard\Message;
 
 use ByTIC\Omnipay\Common\Message\Traits\RequestDataGetWithValidationTrait;
 use ByTIC\Omnipay\Romcard\Helper;
+use ByTIC\Omnipay\Romcard\Message\Traits\ParseResponseFormTrait;
 
 /**
- * Class PurchaseRequest
+ * Class SaleRequest
  * @package ByTIC\Omnipay\Romcard\Message
  *
- * @method PurchaseResponse send()
+ * @method SaleResponse send()
  */
-class PurchaseRequest extends AbstractRequest
+class SaleRequest extends AbstractRequest
 {
     use RequestDataGetWithValidationTrait;
+    use ParseResponseFormTrait;
 
     /**
      * @inheritdoc
@@ -33,7 +35,8 @@ class PurchaseRequest extends AbstractRequest
         $params = [
             'amount',
             'orderId',
-            'description'
+            'cardReference',
+            'transactionReference'
         ];
         return array_merge($params, parent::validateDataFields());
     }
@@ -45,28 +48,20 @@ class PurchaseRequest extends AbstractRequest
     protected function populateData()
     {
         $data = [
+            'ORDER' => $this->getOrderId(),
             'AMOUNT' => sprintf("%.2f", $this->getAmount()),
             'CURRENCY' => $this->getCurrency(),
-            'ORDER' => $this->getOrderId(),
-            'DESC' => $this->getDescription(),
-            'MERCH_NAME' => $this->getMerchantName(),
-            'MERCH_URL' => $this->getMerchantUrl(),
-            'MERCHANT' => $this->getMerchant(),
+            'RRN' => $this->getCardReference(),
+            'INT_REF' => $this->getTransactionReference(),
+            'TRTYPE' => Helper::TRANSACTION_TYPE_SALE,
             'TERMINAL' => $this->getTerminal(),
-            'EMAIL' => $this->getMerchantEmail(),
-            'TRTYPE' => Helper::TRANSACTION_TYPE_PREAUTH,
-
-            'COUNTRY' => null,
-            'MERCH_GMT' => null,
             'TIMESTAMP' => gmdate('YmdHis'),
             'NONCE' => self::generateNonce(),
             'BACKREF' => $this->getReturnUrl(),
         ];
+        $data['BACKREF'] = empty($data['BACKREF']) ? 'http://localhost' : $data['BACKREF'];
 
         $data['P_SIGN'] = Helper::generateSignHash($data, $this->getKey());
-
-        $data['redirectUrl'] = $this->getEndpointUrl();
-
         return $data;
     }
 }

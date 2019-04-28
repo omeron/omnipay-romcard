@@ -28,6 +28,9 @@ trait CompletePurchaseRequestTrait
     {
         $data = $this->httpRequest->query->all();
         if ($this->validateHash()) {
+            foreach ($data as $key=>$value) {
+                $this->setDataItem($key, $value);
+            }
             return $data;
         }
         return [];
@@ -40,7 +43,7 @@ trait CompletePurchaseRequestTrait
     {
         return Helper::orderedResponse(
             $this->httpRequest->query->all(),
-            Helper::TRTTYPE_PREAUTH
+            Helper::TRANSACTION_TYPE_PREAUTH
         );
     }
 

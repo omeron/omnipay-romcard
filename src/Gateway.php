@@ -4,6 +4,7 @@ namespace ByTIC\Omnipay\Romcard;
 
 use ByTIC\Omnipay\Romcard\Message\CompletePurchaseRequest;
 use ByTIC\Omnipay\Romcard\Message\PurchaseRequest;
+use ByTIC\Omnipay\Romcard\Message\SaleRequest;
 use ByTIC\Omnipay\Romcard\Message\ServerCompletePurchaseRequest;
 use ByTIC\Omnipay\Romcard\Traits\HasIntegrationParametersTrait;
 use Omnipay\Common\AbstractGateway;
@@ -59,6 +60,20 @@ class Gateway extends AbstractGateway
 
         return $this->createRequest(
             PurchaseRequest::class,
+            array_merge($this->getDefaultParameters(), $parameters)
+        );
+    }
+
+    /**
+     * @inheritdoc
+     * @return SaleRequest
+     */
+    public function sale(array $parameters = []): RequestInterface
+    {
+        $parameters['endpointUrl'] = $this->getEndpointUrl();
+
+        return $this->createRequest(
+            SaleRequest::class,
             array_merge($this->getDefaultParameters(), $parameters)
         );
     }

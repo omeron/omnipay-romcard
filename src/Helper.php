@@ -21,12 +21,12 @@ class Helper
     const ACTION_REJECTED = '2';
     const ACTION_ERROR = '3';
 
-    const TRTTYPE_PREAUTH = 0;
-    const TRTTYPE_CAPTURE = 21;
-    const TRTTYPE_VOID = 24;
+    const TRANSACTION_TYPE_PREAUTH = 0;
+    const TRANSACTION_TYPE_SALE = 21;
+    const TRANSACTION_TYPE_REVERSAL = 24;
 
-    const TRTTYPE_PARTIAL_REFUND = 25;
-    const TRTTYPE_VOID_FRAUD = 26; //anulare pe motiv de frauda
+    const TRANSACTION_TYPE_PARTIAL_REFUND = 25;
+    const TRANSACTION_TYPE_FRAUD_FRAUD = 26; //anular e pe motiv de frauda
 
     /**
      * @param array $params
@@ -71,7 +71,7 @@ class Helper
     public static function getResponseTypeParams($transactionType)
     {
         switch ($transactionType) {
-            case self::TRTTYPE_PREAUTH:
+            case self::TRANSACTION_TYPE_PREAUTH:
                 return [
                     'TERMINAL',
                     'TRTYPE',
@@ -89,7 +89,7 @@ class Helper
                     'NONCE'
                 ];
                 break;
-            case self::TRTTYPE_CAPTURE:
+            case self::TRANSACTION_TYPE_SALE:
                 return [
                     'ACTION',
                     'RC',
@@ -104,7 +104,7 @@ class Helper
                     'NONCE'
                 ];
                 break;
-            case self::TRTTYPE_VOID:
+            case self::TRANSACTION_TYPE_REVERSAL:
                 return [
                     'ACTION',
                     'RC',
