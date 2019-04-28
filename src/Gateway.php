@@ -83,12 +83,14 @@ class Gateway extends AbstractGateway
      */
     public function completePurchase(array $parameters = []): RequestInterface
     {
-        return $this->createRequest(
+        /** @var CompletePurchaseRequest $request */
+        $request = $this->createRequest(
             CompletePurchaseRequest::class,
             array_merge($this->getDefaultParameters(), $parameters)
         );
+        $request->setSaleRequest($this->sale($parameters));
+        return $request;
     }
-
 
     // ------------ PARAMETERS ------------ //
 

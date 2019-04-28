@@ -2,6 +2,7 @@
 
 namespace ByTIC\Omnipay\Romcard\Tests\Message;
 
+use ByTIC\Omnipay\Romcard\Gateway;
 use ByTIC\Omnipay\Romcard\Message\CompletePurchaseRequest;
 use ByTIC\Omnipay\Romcard\Message\CompletePurchaseResponse;
 use ByTIC\Omnipay\Romcard\Tests\AbstractTest;
@@ -21,10 +22,11 @@ class CompletePurchaseRequestTest extends AbstractTest
         $request = HttpRequest::createFromGlobals();
         $parameters = require TEST_FIXTURE_PATH . DIRECTORY_SEPARATOR. 'completePurchaseParams.php';
         $request->query->replace($parameters);
-        $request = new CompletePurchaseRequest($client, $request);
+
+        $gateway = new Gateway($client, $request);
 
         $parameters = require TEST_FIXTURE_PATH . '/enviromentParams.php';
-        $request->initialize($parameters);
+        $request = $gateway->completePurchase($parameters);
 
         /** @var CompletePurchaseResponse $response */
         $response = $request->send();
