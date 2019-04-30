@@ -2,6 +2,7 @@
 
 namespace ByTIC\Omnipay\Romcard\Message;
 
+use ByTIC\Omnipay\Common\Message\Traits\HtmlResponses\ConfirmHtmlTrait;
 use ByTIC\Omnipay\Romcard\Message\Traits\CompletePurchaseResponseTrait;
 
 /**
@@ -10,5 +11,6 @@ use ByTIC\Omnipay\Romcard\Message\Traits\CompletePurchaseResponseTrait;
  */
 class CompletePurchaseResponse extends AbstractResponse
 {
+    use ConfirmHtmlTrait;
     use CompletePurchaseResponseTrait;
 }
