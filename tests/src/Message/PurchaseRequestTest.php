@@ -1,0 +1,53 @@
+<?php
+
+namespace ByTIC\Omnipay\Romcard\Tests\Message;
+
+use ByTIC\Omnipay\Romcard\Message\PurchaseRequest;
+use ByTIC\Omnipay\Romcard\Tests\AbstractTest;
+use Guzzle\Http\Client as HttpClient;
+use Symfony\Component\HttpFoundation\Request as HttpRequest;
+
+class PurchaseRequestTest extends AbstractTest
+{
+
+    /**
+     * @param $description
+     * @param $output
+     * @dataProvider dataDescProcessing
+     */
+    public function testDescProcessing($description, $output)
+    {
+        $request = $this->newPurchaseRequest();
+
+        $parameters = ['amount' => 9.0, 'orderId' => 8];
+        $parameters = require TEST_FIXTURE_PATH . '/enviromentParams.php';
+
+        $request->initialize($parameters);
+        $request->setDescription($description);
+
+        $data = $request->getData();
+        static::assertSame($output, $data['DESC']);
+    }
+
+    public function dataDescProcessing()
+    {
+        return [
+            [
+                '1283723791398123798392712381273912379812379813798129729387923838',
+                '1283723791398123798392712381273912379812379813798129729'
+            ],
+        ];
+    }
+
+
+    /**
+     * @return PurchaseRequest
+     */
+    protected function newPurchaseRequest()
+    {
+        $client = new HttpClient();
+        $request = HttpRequest::createFromGlobals();
+        $request = new PurchaseRequest($client, $request);
+        return $request;
+    }
+}

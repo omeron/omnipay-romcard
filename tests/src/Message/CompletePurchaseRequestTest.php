@@ -20,7 +20,7 @@ class CompletePurchaseRequestTest extends AbstractTest
     {
         $client = new HttpClient();
         $request = HttpRequest::createFromGlobals();
-        $parameters = require TEST_FIXTURE_PATH . DIRECTORY_SEPARATOR. 'completePurchaseParams.php';
+        $parameters = require TEST_FIXTURE_PATH . DIRECTORY_SEPARATOR . 'completePurchaseParams.php';
         $request->query->replace($parameters);
 
         $gateway = new Gateway($client, $request);
@@ -37,11 +37,11 @@ class CompletePurchaseRequestTest extends AbstractTest
         self::assertFalse($response->isPending());
         self::assertFalse($response->isCancelled());
 
-        self::assertEquals('0',$response->getCode());
-        self::assertEquals('Approved',$response->getMessage());
-        self::assertEquals('400509625162',$response->getCardReference());
-        self::assertEquals('1F4129EAE09A0B25',$response->getTransactionReference());
-        self::assertEquals('100006',$response->getTransactionId());
+        self::assertEquals('0', $response->getCode());
+        self::assertEquals('Approved', $response->getMessage());
+        self::assertEquals('400509625162', $response->getCardReference());
+        self::assertEquals('1F4129EAE09A0B25', $response->getTransactionReference());
+        self::assertEquals('100006', $response->getTransactionId());
     }
 
     /**
