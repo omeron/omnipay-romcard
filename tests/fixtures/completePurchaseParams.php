@@ -7,7 +7,7 @@ return [
     'AMOUNT' => 3.49,
     'CURRENCY' => 'RON',
     'DESC' => 'Comanda online #100006',
-    'ACTION' => 0,
+    'ACTION' => '0',
     'RC' => '00',
     'MESSAGE' => 'Approved',
     'RRN' => 400509625162,

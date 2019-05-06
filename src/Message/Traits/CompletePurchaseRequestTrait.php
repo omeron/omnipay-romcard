@@ -16,7 +16,7 @@ trait CompletePurchaseRequestTrait
     /**
      * @return mixed
      */
-    protected function isValidNotification()
+    public function isValidNotification()
     {
         return $this->hasGet('TERMINAL', 'TRTYPE', 'P_SIGN');
     }
