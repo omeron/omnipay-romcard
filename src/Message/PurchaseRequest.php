@@ -48,7 +48,7 @@ class PurchaseRequest extends AbstractRequest
             'AMOUNT' => sprintf("%.2f", $this->getAmount()),
             'CURRENCY' => $this->getCurrency(),
             'ORDER' => $this->getOrderId(),
-            'DESC' => substr($this->getDescription(), 0, 54), // LIMIT DESCRIPTION TO MAX 55 CHARS
+            'DESC' => Helper::formatDescription($this->getDescription()),
             'MERCH_NAME' => $this->getMerchantName(),
             'MERCH_URL' => $this->getMerchantUrl(),
             'MERCHANT' => $this->getMerchant(),

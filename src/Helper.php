@@ -29,6 +29,33 @@ class Helper
     const TRANSACTION_TYPE_FRAUD_FRAUD = 26; //anular e pe motiv de frauda
 
     /**
+     * @param $description
+     * @return bool|string
+     */
+    public static function formatDescription($description)
+    {
+        // LIMIT DESCRIPTION TO MAX 55 CHARS
+        return substr($description, 0, 54);
+    }
+
+    /**
+     * ORDER NEEDS TO BE BETWEEN 6 AND 19 CHARACTERS LONG
+     *
+     * @param $id
+     * @return bool|string
+     */
+    public static function formatOrderId($id)
+    {
+        $len = strlen($id);
+        if ($len < 6) {
+            $id = str_pad($id, 6, '0', STR_PAD_LEFT);
+        }
+
+        return $id;
+    }
+
+
+    /**
      * @param array $params
      * @param string $encryptionKey
      * @return string
@@ -41,9 +68,10 @@ class Helper
             if (is_null($_value)) {
                 $res .= '-';
             } else {
-                $res .= strlen($_value) . $_value;
+                $res .= strlen($_value).$_value;
             }
         }
+
         return strtoupper(hash_hmac('sha1', $res, pack('H*', $encryptionKey)));
     }
 
@@ -65,6 +93,7 @@ class Helper
 
             $result[$_field] = $params[$_field];
         }
+
         return $result;
     }
 
@@ -86,7 +115,7 @@ class Helper
                     'INT_REF',
                     'APPROVAL',
                     'TIMESTAMP',
-                    'NONCE'
+                    'NONCE',
                 ];
                 break;
             case self::TRANSACTION_TYPE_SALE:
@@ -101,7 +130,7 @@ class Helper
                     'RRN',
                     'INT_REF',
                     'TIMESTAMP',
-                    'NONCE'
+                    'NONCE',
                 ];
                 break;
             case self::TRANSACTION_TYPE_REVERSAL:
@@ -116,10 +145,11 @@ class Helper
                     'RRN',
                     'INT_REF',
                     'TIMESTAMP',
-                    'NONCE'
+                    'NONCE',
                 ];
                 break;
         }
+
         return [];
     }
 }
