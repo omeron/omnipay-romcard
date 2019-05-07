@@ -12,6 +12,29 @@ class HelperTest extends AbstractTest
 {
 
     /**
+     * @dataProvider dataFormatAmount
+     * @param $amount
+     * @param $formatted
+     */
+    public function testFormatAmount($amount, $formatted)
+    {
+        self::assertEquals($formatted, Helper::formatAmount($amount));
+    }
+
+    /**
+     * @return array
+     */
+    public function dataFormatAmount()
+    {
+        return [
+            [1, '1.00'],
+            [1.00, '1.00'],
+            ['1.00', '1.00'],
+            ['1.23', '1.23'],
+        ];
+    }
+
+    /**
      * @dataProvider dataFormatOrderId
      * @param $id
      * @param $formatted

@@ -35,7 +35,7 @@ class Helper
     public static function formatAmount($amount)
     {
         // MUST CONTAINT 2 decimals with point separator
-        return sprintf("%.2f", $amount);
+        return number_format($amount, 2, '.', '');
     }
 
     /**
