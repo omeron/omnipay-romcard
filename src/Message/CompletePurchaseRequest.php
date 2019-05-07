@@ -30,19 +30,35 @@ class CompletePurchaseRequest extends AbstractRequest
     {
         $data = $this->parseNotificationTrait();
         if (is_array($data) && count($data)) {
-            $dataSale = [
-                'orderId' => $data['ORDER'],
-                'amount' => $data['AMOUNT'],
-                'cardReference' => $data['RRN'],
-                'transactionReference' => $data['INT_REF'],
-            ];
-            OmnipayHelper::initialize($this->getSaleRequest(), $dataSale);
-            $responseSale =  $this->getSaleRequest()->send();
-            return $responseSale->getData();
+            return $this->makeSaleRequest($data);
         }
         return [];
     }
 
+    /**
+     * @param $data
+     * @return array
+     */
+    protected function makeSaleRequest($data)
+    {
+        $responseSale =  $this->getSaleRequest();
+
+        OmnipayHelper::initialize($this->getSaleRequest(), $this->getParameters());
+        $dataSale = [
+            'orderId' => $data['ORDER'],
+            'amount' => $data['AMOUNT'],
+            'cardReference' => $data['RRN'],
+            'transactionReference' => $data['INT_REF'],
+        ];
+        OmnipayHelper::initialize($this->getSaleRequest(), $dataSale);
+
+        $responseSale->send();
+        return $responseSale->getData();
+    }
+
+    /**
+     * @return ParameterBag
+     */
     protected function getHttpRequestBag(): ParameterBag
     {
         return $this->httpRequest->query;
