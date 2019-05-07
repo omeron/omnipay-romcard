@@ -14,11 +14,11 @@ class HelperTest extends AbstractTest
     /**
      * @dataProvider dataFormatOrderId
      * @param $id
-     * @param $formated
+     * @param $formatted
      */
-    public function testFormatOrderId($id, $formated)
+    public function testFormatOrderId($id, $formatted)
     {
-        self::assertEquals($formated, Helper::formatOrderId($id));
+        self::assertEquals($formatted, Helper::formatOrderId($id));
     }
 
     /**

@@ -45,9 +45,9 @@ class PurchaseRequest extends AbstractRequest
     protected function populateData()
     {
         $data = [
-            'AMOUNT' => sprintf("%.2f", $this->getAmount()),
+            'AMOUNT' => Helper::formatAmount($this->getAmount()),
             'CURRENCY' => $this->getCurrency(),
-            'ORDER' => $this->getOrderId(),
+            'ORDER' => Helper::formatOrderId($this->getOrderId()),
             'DESC' => Helper::formatDescription($this->getDescription()),
             'MERCH_NAME' => $this->getMerchantName(),
             'MERCH_URL' => $this->getMerchantUrl(),

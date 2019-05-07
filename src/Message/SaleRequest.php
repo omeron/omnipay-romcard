@@ -48,8 +48,8 @@ class SaleRequest extends AbstractRequest
     protected function populateData()
     {
         $data = [
-            'ORDER' => $this->getOrderId(),
-            'AMOUNT' => sprintf("%.2f", $this->getAmount()),
+            'ORDER' => Helper::formatOrderId($this->getOrderId()),
+            'AMOUNT' => Helper::formatAmount($this->getAmount()),
             'CURRENCY' => $this->getCurrency(),
             'RRN' => $this->getCardReference(),
             'INT_REF' => $this->getTransactionReference(),

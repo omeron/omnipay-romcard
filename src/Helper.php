@@ -29,6 +29,16 @@ class Helper
     const TRANSACTION_TYPE_FRAUD_FRAUD = 26; //anular e pe motiv de frauda
 
     /**
+     * @param $amount
+     * @return bool|string
+     */
+    public static function formatAmount($amount)
+    {
+        // MUST CONTAINT 2 decimals with point separator
+        return sprintf("%.2f", $amount);
+    }
+
+    /**
      * @param $description
      * @return bool|string
      */
