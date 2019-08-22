@@ -10,6 +10,16 @@ use ByTIC\Omnipay\Romcard\Helper;
  */
 class HelperTest extends AbstractTest
 {
+    public function testGenerateSignHash()
+    {
+        $data = require TEST_FIXTURE_PATH . '/CompletePuchases/request0.php';
+        $params = Helper::orderedResponse(
+            $data,
+            Helper::TRANSACTION_TYPE_PREAUTH
+        );
+        $hmac = Helper::generateSignHash($params, getenv('ROMCARD_KEY'));
+        self::assertSame($data['P_SIGN'], $hmac);
+    }
 
     /**
      * @dataProvider dataFormatAmount
