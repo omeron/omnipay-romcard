@@ -5,8 +5,13 @@ namespace ByTIC\Omnipay\Romcard\Tests\Message;
 use ByTIC\Omnipay\Romcard\Message\PurchaseRequest;
 use ByTIC\Omnipay\Romcard\Tests\AbstractTest;
 use Guzzle\Http\Client as HttpClient;
+use Omnipay\Common\Http\Client;
 use Symfony\Component\HttpFoundation\Request as HttpRequest;
 
+/**
+ * Class PurchaseRequestTest
+ * @package ByTIC\Omnipay\Romcard\Tests\Message
+ */
 class PurchaseRequestTest extends AbstractTest
 {
 
@@ -45,7 +50,7 @@ class PurchaseRequestTest extends AbstractTest
      */
     protected function newPurchaseRequest()
     {
-        $client = new HttpClient();
+        $client = new Client();
         $request = HttpRequest::createFromGlobals();
         $request = new PurchaseRequest($client, $request);
         return $request;

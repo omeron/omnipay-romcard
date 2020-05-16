@@ -15,8 +15,7 @@ trait ParseResponseFormTrait
     public function sendData($data)
     {
         $url = $this->getEndpointUrl() . '?' . http_build_query($data);
-        $httpRequest = $this->httpClient->get($url);
-        $httpResponse = $httpRequest->send();
+        $httpResponse = $this->httpClient->request('GET', $url);
 
         $returnData = self::parseResponseHtml($httpResponse->getBody(true));
 
