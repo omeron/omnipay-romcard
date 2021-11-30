@@ -1,14 +1,14 @@
 <?php
 
-namespace ByTIC\Omnipay\Romcard\Message;
+namespace Paytic\Omnipay\Romcard\Message;
 
-use ByTIC\Omnipay\Romcard\Message\Traits\CompletePurchaseRequestTrait;
+use Paytic\Omnipay\Romcard\Message\Traits\CompletePurchaseRequestTrait;
 use Omnipay\Common\Helper as OmnipayHelper;
 use Symfony\Component\HttpFoundation\ParameterBag;
 
 /**
  * Class PurchaseResponse
- * @package ByTIC\Omnipay\Romcard\Message
+ * @package Paytic\Omnipay\Romcard\Message
  *
  * @method CompletePurchaseResponse send()
  */

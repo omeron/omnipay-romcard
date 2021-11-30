@@ -1,6 +1,8 @@
 <?php
 
-namespace ByTIC\Omnipay\Romcard;
+namespace Paytic\Omnipay\Romcard;
+
+use Exception;
 
 /**
  *

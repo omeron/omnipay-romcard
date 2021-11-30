@@ -1,8 +1,8 @@
 <?php
 
-namespace ByTIC\Omnipay\Romcard\Message\Traits;
+namespace Paytic\Omnipay\Romcard\Message\Traits;
 
-use ByTIC\Omnipay\Romcard\Helper;
+use Paytic\Omnipay\Romcard\Helper;
 use DateTime;
 
 trait BaseParamsResponseTrait

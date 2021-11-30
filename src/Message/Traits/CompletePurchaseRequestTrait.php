@@ -1,13 +1,13 @@
 <?php
 
-namespace ByTIC\Omnipay\Romcard\Message\Traits;
+namespace Paytic\Omnipay\Romcard\Message\Traits;
 
-use ByTIC\Omnipay\Common\Message\Traits\GatewayNotificationRequestTrait;
-use ByTIC\Omnipay\Romcard\Helper;
+use Paytic\Omnipay\Common\Message\Traits\GatewayNotificationRequestTrait;
+use Paytic\Omnipay\Romcard\Helper;
 
 /**
  * Class CompletePurchaseRequestTrait
- * @package ByTIC\Omnipay\Romcard\Message\Traits
+ * @package Paytic\Omnipay\Romcard\Message\Traits
  */
 trait CompletePurchaseRequestTrait
 {

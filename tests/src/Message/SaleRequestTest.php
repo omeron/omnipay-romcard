@@ -1,19 +1,19 @@
 <?php
 
-namespace ByTIC\Omnipay\Romcard\Tests\Message;
+namespace Paytic\Omnipay\Romcard\Tests\Message;
 
-use ByTIC\Omnipay\Romcard\Gateway;
-use ByTIC\Omnipay\Romcard\Helper;
-use ByTIC\Omnipay\Romcard\Message\CompletePurchaseRequest;
-use ByTIC\Omnipay\Romcard\Message\CompletePurchaseResponse;
-use ByTIC\Omnipay\Romcard\Message\SaleRequest;
-use ByTIC\Omnipay\Romcard\Message\SaleResponse;
-use ByTIC\Omnipay\Romcard\Tests\AbstractTest;
+use Paytic\Omnipay\Romcard\Gateway;
+use Paytic\Omnipay\Romcard\Helper;
+use Paytic\Omnipay\Romcard\Message\CompletePurchaseRequest;
+use Paytic\Omnipay\Romcard\Message\CompletePurchaseResponse;
+use Paytic\Omnipay\Romcard\Message\SaleRequest;
+use Paytic\Omnipay\Romcard\Message\SaleResponse;
+use Paytic\Omnipay\Romcard\Tests\AbstractTest;
 use Symfony\Component\HttpFoundation\Request as HttpRequest;
 
 /**
  * Class SaleRequestTest
- * @package ByTIC\Omnipay\Romcard\Tests\Message
+ * @package Paytic\Omnipay\Romcard\Tests\Message
  */
 class SaleRequestTest extends AbstractTest
 {

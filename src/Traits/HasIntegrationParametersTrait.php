@@ -1,6 +1,6 @@
 <?php
 
-namespace ByTIC\Omnipay\Romcard\Traits;
+namespace Paytic\Omnipay\Romcard\Traits;
 
 trait HasIntegrationParametersTrait
 {

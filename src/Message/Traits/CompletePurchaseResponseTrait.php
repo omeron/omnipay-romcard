@@ -1,14 +1,14 @@
 <?php
 
-namespace ByTIC\Omnipay\Romcard\Message\Traits;
+namespace Paytic\Omnipay\Romcard\Message\Traits;
 
-use ByTIC\Omnipay\Common\Message\Traits\GatewayNotificationResponseTrait;
-use ByTIC\Omnipay\Romcard\Helper;
+use Paytic\Omnipay\Common\Message\Traits\GatewayNotificationResponseTrait;
+use Paytic\Omnipay\Romcard\Helper;
 use DateTime;
 
 /**
  * Class CompletePurchaseResponseTrait
- * @package ByTIC\Omnipay\Romcard\Message\Traits
+ * @package Paytic\Omnipay\Romcard\Message\Traits
  */
 trait CompletePurchaseResponseTrait
 {

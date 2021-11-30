@@ -1,8 +1,8 @@
 <?php
 
-namespace ByTIC\Omnipay\Romcard\Message;
+namespace Paytic\Omnipay\Romcard\Message;
 
-use ByTIC\Omnipay\Romcard\Message\Traits\BaseParamsResponseTrait;
+use Paytic\Omnipay\Romcard\Message\Traits\BaseParamsResponseTrait;
 
 class SaleResponse extends AbstractResponse
 {

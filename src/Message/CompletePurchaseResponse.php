@@ -1,13 +1,13 @@
 <?php
 
-namespace ByTIC\Omnipay\Romcard\Message;
+namespace Paytic\Omnipay\Romcard\Message;
 
-use ByTIC\Omnipay\Common\Message\Traits\HtmlResponses\ConfirmHtmlTrait;
-use ByTIC\Omnipay\Romcard\Message\Traits\CompletePurchaseResponseTrait;
+use Paytic\Omnipay\Common\Message\Traits\HtmlResponses\ConfirmHtmlTrait;
+use Paytic\Omnipay\Romcard\Message\Traits\CompletePurchaseResponseTrait;
 
 /**
  * Class PurchaseResponse
- * @package ByTIC\Omnipay\Romcard\Message
+ * @package Paytic\Omnipay\Romcard\Message
  */
 class CompletePurchaseResponse extends AbstractResponse
 {

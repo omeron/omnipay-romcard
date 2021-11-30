@@ -1,6 +1,6 @@
 <?php
 
-namespace ByTIC\Omnipay\Romcard\Tests;
+namespace Paytic\Omnipay\Romcard\Tests;
 
 use GuzzleHttp\Client as HttpClient;
 use Omnipay\Common\Http\Client;

@@ -1,12 +1,12 @@
 <?php
 
-namespace ByTIC\Omnipay\Romcard\Tests;
+namespace Paytic\Omnipay\Romcard\Tests;
 
-use ByTIC\Omnipay\Romcard\Helper;
+use Paytic\Omnipay\Romcard\Helper;
 
 /**
  * Class HelperTest
- * @package ByTIC\Omnipay\Romcard\Tests
+ * @package Paytic\Omnipay\Romcard\Tests
  */
 class HelperTest extends AbstractTest
 {

@@ -1,10 +1,10 @@
 <?php
 
-namespace ByTIC\Omnipay\Romcard;
+namespace Paytic\Omnipay\Romcard;
 
 /**
  * Class Helper
- * @package ByTIC\Omnipay\Romcard
+ * @package Paytic\Omnipay\Romcard
  */
 class Helper
 {

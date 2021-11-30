@@ -1,8 +1,8 @@
 <?php
 
-namespace ByTIC\Omnipay\Romcard\Tests;
+namespace Paytic\Omnipay\Romcard\Tests;
 
-use ByTIC\Omnipay\Romcard\Gateway;
+use Paytic\Omnipay\Romcard\Gateway;
 
 class GatewayTest extends AbstractTest
 {

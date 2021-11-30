@@ -1,14 +1,14 @@
 <?php
 
-namespace ByTIC\Omnipay\Romcard\Message;
+namespace Paytic\Omnipay\Romcard\Message;
 
-use ByTIC\Omnipay\Common\Message\Traits\RequestDataGetWithValidationTrait;
-use ByTIC\Omnipay\Romcard\Helper;
-use ByTIC\Omnipay\Romcard\Message\Traits\ParseResponseFormTrait;
+use Paytic\Omnipay\Common\Message\Traits\RequestDataGetWithValidationTrait;
+use Paytic\Omnipay\Romcard\Helper;
+use Paytic\Omnipay\Romcard\Message\Traits\ParseResponseFormTrait;
 
 /**
  * Class SaleRequest
- * @package ByTIC\Omnipay\Romcard\Message
+ * @package Paytic\Omnipay\Romcard\Message
  *
  * @method SaleResponse send()
  */

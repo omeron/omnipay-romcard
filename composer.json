@@ -1,5 +1,5 @@
 {
-  "name": "bytic/omnipay-romcard",
+  "name": "paytic/omnipay-romcard",
   "type": "library",
   "license": "MIT",
   "description": "romcard driver for ThePhpLeague Omnipay multi-payment processing library",
@@ -11,7 +11,7 @@
     "pay",
     "payment"
   ],
-  "homepage": "https://github.com/ByTIC/omnipay-romcard",
+  "homepage": "https://github.com/paytic/omnipay-romcard",
   "authors": [
     {
       "name": "Gabriel Solomon",
@@ -20,25 +20,24 @@
   ],
   "autoload": {
     "psr-4": {
-      "ByTIC\\Omnipay\\Romcard\\": "src/"
+      "Paytic\\Omnipay\\Romcard\\": "src/"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "ByTIC\\Omnipay\\Romcard\\Tests\\": "tests/src",
-      "ByTIC\\Omnipay\\Romcard\\Tests\\Fixtures\\": "tests/fixtures"
+      "Paytic\\Omnipay\\Romcard\\Tests\\": "tests/src",
+      "Paytic\\Omnipay\\Romcard\\Tests\\Fixtures\\": "tests/fixtures"
     }
   },
   "require": {
     "php": "^7.0|^8.0",
-    "bytic/omnipay-common": "^3.0"
+    "paytic/omnipay-common": "^3.0"
   },
   "require-dev": {
-    "phpunit/phpunit": "^6.2|^7.0|^8.0|^9.0",
+    "omnipay/tests": "^3|^4",
     "vlucas/phpdotenv": "^2.5",
     "mockery/mockery": "^1.0",
-    "omnipay/tests": "^3",
     "php-http/mock-client": "^1.0",
-    "nyholm/psr7": "^1.1"
+    "php-http/guzzle6-adapter": "^1.1.1|^2"
   }
 }

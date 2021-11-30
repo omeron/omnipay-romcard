@@ -1,16 +1,16 @@
 <?php
 
-namespace ByTIC\Omnipay\Romcard\Tests\Message;
+namespace Paytic\Omnipay\Romcard\Tests\Message;
 
-use ByTIC\Omnipay\Romcard\Message\PurchaseRequest;
-use ByTIC\Omnipay\Romcard\Tests\AbstractTest;
+use Paytic\Omnipay\Romcard\Message\PurchaseRequest;
+use Paytic\Omnipay\Romcard\Tests\AbstractTest;
 use Guzzle\Http\Client as HttpClient;
 use Omnipay\Common\Http\Client;
 use Symfony\Component\HttpFoundation\Request as HttpRequest;
 
 /**
  * Class PurchaseRequestTest
- * @package ByTIC\Omnipay\Romcard\Tests\Message
+ * @package Paytic\Omnipay\Romcard\Tests\Message
  */
 class PurchaseRequestTest extends AbstractTest
 {

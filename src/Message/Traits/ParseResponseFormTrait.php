@@ -1,12 +1,12 @@
 <?php
 
-namespace ByTIC\Omnipay\Romcard\Message\Traits;
+namespace Paytic\Omnipay\Romcard\Message\Traits;
 
 use Exception;
 
 /**
  * Trait ParseResponseFormTrait
- * @package ByTIC\Omnipay\Romcard\Message\Traits
+ * @package Paytic\Omnipay\Romcard\Message\Traits
  * @inspired from https://github.com/mindmagnet/ebtpay-magento1/blob/master/src/app/code/community/MindMagnet/BTPay/lib/btpaygate/btpaygate.php
  */
 trait ParseResponseFormTrait

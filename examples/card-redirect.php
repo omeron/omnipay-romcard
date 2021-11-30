@@ -2,7 +2,7 @@
 
 require 'init.php';
 
-$gateway = new \ByTIC\Omnipay\Romcard\Gateway();
+$gateway = new \Paytic\Omnipay\Romcard\Gateway();
 
 $parameters = require TEST_FIXTURE_PATH . 'simpleOrderParams.php';
 $parameters = require TEST_FIXTURE_PATH . 'enviromentParams.php';

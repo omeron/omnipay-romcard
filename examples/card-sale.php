@@ -4,7 +4,7 @@ require 'init.php';
 
 print_r($_GET);
 
-$gateway = new \ByTIC\Omnipay\Romcard\Gateway();
+$gateway = new \Paytic\Omnipay\Romcard\Gateway();
 
 $parameters = require TEST_FIXTURE_PATH . 'saleParams.php';
 $parameters = require TEST_FIXTURE_PATH . 'enviromentParams.php';

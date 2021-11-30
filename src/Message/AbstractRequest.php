@@ -1,14 +1,14 @@
 <?php
 
-namespace ByTIC\Omnipay\Romcard\Message;
+namespace Paytic\Omnipay\Romcard\Message;
 
-use ByTIC\Omnipay\Common\Message\Traits\SendDataRequestTrait;
-use ByTIC\Omnipay\Romcard\Traits\HasIntegrationParametersTrait;
+use Paytic\Omnipay\Common\Message\Traits\SendDataRequestTrait;
+use Paytic\Omnipay\Romcard\Traits\HasIntegrationParametersTrait;
 use Omnipay\Common\Message\AbstractRequest as CommonAbstractRequest;
 
 /**
  * Class AbstractRequest
- * @package ByTIC\Omnipay\Romcard\Message
+ * @package Paytic\Omnipay\Romcard\Message
  */
 abstract class AbstractRequest extends CommonAbstractRequest
 {

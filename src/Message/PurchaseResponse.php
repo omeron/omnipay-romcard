@@ -1,9 +1,9 @@
 <?php
 
-namespace ByTIC\Omnipay\Romcard\Message;
+namespace Paytic\Omnipay\Romcard\Message;
 
-use ByTIC\Omnipay\Common\Message\Traits\RedirectHtmlTrait;
-use ByTIC\Omnipay\Romcard\Models\Transactions\Purchase;
+use Paytic\Omnipay\Common\Message\Traits\RedirectHtmlTrait;
+use Paytic\Omnipay\Romcard\Models\Transactions\Purchase;
 use Omnipay\Common\Message\RedirectResponseInterface;
 
 /**

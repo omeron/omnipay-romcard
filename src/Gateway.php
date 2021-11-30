@@ -1,18 +1,18 @@
 <?php
 
-namespace ByTIC\Omnipay\Romcard;
+namespace Paytic\Omnipay\Romcard;
 
-use ByTIC\Omnipay\Romcard\Message\CompletePurchaseRequest;
-use ByTIC\Omnipay\Romcard\Message\PurchaseRequest;
-use ByTIC\Omnipay\Romcard\Message\SaleRequest;
-use ByTIC\Omnipay\Romcard\Message\ServerCompletePurchaseRequest;
-use ByTIC\Omnipay\Romcard\Traits\HasIntegrationParametersTrait;
+use Paytic\Omnipay\Romcard\Message\CompletePurchaseRequest;
+use Paytic\Omnipay\Romcard\Message\PurchaseRequest;
+use Paytic\Omnipay\Romcard\Message\SaleRequest;
+use Paytic\Omnipay\Romcard\Message\ServerCompletePurchaseRequest;
+use Paytic\Omnipay\Romcard\Traits\HasIntegrationParametersTrait;
 use Omnipay\Common\AbstractGateway;
 use Omnipay\Common\Message\RequestInterface;
 
 /**
  * Class Gateway
- * @package ByTIC\Omnipay\Romcard
+ * @package Paytic\Omnipay\Romcard
  *
  * @method RequestInterface authorize(array $options = [])
  * @method RequestInterface completeAuthorize(array $options = [])
