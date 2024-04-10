@@ -7,7 +7,7 @@ use Paytic\Omnipay\Romcard\Message\PurchaseRequest;
 use Paytic\Omnipay\Romcard\Message\SaleRequest;
 use Paytic\Omnipay\Romcard\Message\ServerCompletePurchaseRequest;
 use Paytic\Omnipay\Romcard\Traits\HasIntegrationParametersTrait;
-use Omnipay\Common\AbstractGateway;
+use Paytic\Omnipay\Common\Gateway\AbstractGateway;
 use Omnipay\Common\Message\RequestInterface;
 
 /**
